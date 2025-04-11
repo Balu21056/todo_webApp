@@ -1,0 +1,292 @@
+/* Global body styling with gradient background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+/* Main app container styling */
+.app-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  margin: 0 20px;
+  overflow: clip;
+  transform: scale(0.95);
+  animation: fadeIn 1s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Title styling */
+h1 {
+  font-size: 3rem;
+  color: #fb0606;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'Roboto', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: slideDown 1s ease-out;
+}
+
+/* Slide down animation for title */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Form container for search and add functionality */
+.form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Search input styling */
+.search-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  width: 60%;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.search-input:focus {
+  border-color: #7fb3d5;
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Task input and deadline input styling */
+.task-input,
+.deadline-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #dcdcdc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+/* Ensure padding doesn't cause overlap */
+.task-input:focus,
+.deadline-input:focus {
+  border-color: #7fb3d5;
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Add button styling */
+.add-button {
+  padding: 12px 20px;
+  font-size: 1.2rem; /* Slightly larger font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 50%; /* Make it span the full width */
+  max-width: 500px; /* Optional: Maximum width */
+  box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  margin-top: 10px; /* Space between the button and the elements above */
+}
+.add-button:hover {
+  background-color: #0876f5; /* Hover color */
+  transform: scale(1.05); /* Add hover effect */
+}
+
+/* Button styling */
+.search-button, button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.search-button {
+  background-color: #7fb3d5;
+  color: #ffffff;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  background-color: #0876f5;
+  transform: translateY(-5px);
+}
+
+button {
+  background-color: #25d94f;
+  color: #ffffff;
+  width: auto;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
+button:hover {
+  background-color: #218838;
+  transform: translateY(-5px);
+}
+
+/* To-Do list styling */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  animation: fadeIn 2s ease-out;
+}
+
+/* To-Do item styling */
+.todo-item {
+  background-color: #f8f8f8;
+  border-left: 5px solid #4a90e2;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transform: translateY(20px);
+  animation: slideUp 0.5s ease-out forwards;
+  white-space: nowrap; /* Prevent wrapping text into two lines */
+  overflow: hidden; /* Ensure long texts don't overflow */
+}
+
+/* Slide-up animation for todo items */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Task text styling */
+.todo-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #710808;
+  flex: 1;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+/* Deadline container */
+.deadline-container {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #777777;
+  transition: color 0.3s;
+}
+
+/* Buttons container aligned to the right */
+.todo-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 10px;
+  gap: 15px; /* Increase the gap between buttons */
+}
+
+/* Buttons styling */
+.todo-item button {
+  padding: 8px 12px; /* Make buttons slightly larger */
+  font-size: 1rem; /* Increase font size of buttons */
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Edit button styling */
+.todo-item button:first-of-type {
+  background-color: #4a90e2;
+}
+
+.todo-item button:first-of-type:hover {
+  background-color: #357ab7;
+  transform: translateY(-5px);
+}
+
+/* Delete button styling */
+.todo-item button:last-of-type {
+  background-color: #e74c3c;
+}
+
+.todo-item button:last-of-type:hover {
+  background-color: #c0392b;
+  transform: translateY(-5px);
+}
+
+/* Edit and save button styling */
+.todo-item .edit-button {
+  background-color: #f39c12;
+}
+
+.todo-item .edit-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-5px);
+}
+
+.todo-item .save-button {
+  background-color: #2ecc71;
+}
+
+.todo-item .save-button:hover {
+  background-color: #27ae60;
+  transform: translateY(-5px);
+}
+
+/* Add some spacing for cancel button */
+.save-button, .cancel-button {
+  margin-left: 5px; /* Adjust spacing */
+}
+
+/* Hover effect for todo item */
+.todo-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
